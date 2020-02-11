@@ -35,7 +35,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0.beta3'
   gem 'factory_bot_rails'
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'  
+  gem 'selenium-webdriver'
+  gem 'dotenv-rails'
 end
 
 group :development do
