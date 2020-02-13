@@ -1,6 +1,8 @@
 <h1>Twitter searcher</h1>
-<p>Tweets found: <%= @tweets[:body].count %></p>
 
-<% if ENV['FAKE_API'] %>
+<% if ENV['FAKE_API'] == 'true' %>
+  <p>Tweets found: <%= @tweets[:body].count %></p>
   <%= render 'fake_list', tweets: @tweets %>
+<% else %>
+  <%= @message %>
 <% end %>
