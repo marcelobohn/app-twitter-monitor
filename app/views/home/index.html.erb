@@ -1,2 +1,9 @@
 <h1>Welcome</h1>
 <p>Twitter monitor</p>
+
+<p>Find tweets with hashtag</p>
+<% @hashtags.each do |hashtag| %>
+  <%= link_to '#' + hashtag.term, { controller: 'search', action: 'index', term: hashtag.term }, method: :get, class: 'btn btn-primary btn-sm' %>
+<% end %>
+<hr />
+<p><%= link_to 'Store new Hashtag', new_hashtag_path, class: 'btn btn-success btn-sm' %></p>
