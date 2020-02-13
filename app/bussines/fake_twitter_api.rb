@@ -18,25 +18,12 @@ class FakeTwitterApi
   mattr_accessor :default_options, instance_writer: false
 
   self.default_options = {
-    timeout: 2,
-    base_uri: '',
+    timeout: 10,
     headers: {
       'Content-Type' => 'application/json',
       'Accept' => 'application/json'
     }
   }
-
-  def self.base_uri(uri)
-    default_options[:base_uri] = uri
-  end
-
-  def self.add_header(name, value)
-    default_options[:headers][name] = value
-  end
-
-  def self.timeout(value)
-    default_options[:timeout] = value
-  end
 
   def request(method, path, options = {})
     max_retry ||= options.fetch(:retry, 3)
