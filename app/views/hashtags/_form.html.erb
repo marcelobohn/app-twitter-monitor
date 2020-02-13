@@ -11,12 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :term %>
-    <%= form.text_field :term %>
+  <div class="form-group row">
+    <%= form.label :term, class: "col-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-form-label"  %>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <%= form.text_field :term, class: "form-control form-control-sm" %>
+    </div>  
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-success btn-sm' %>
   </div>
+  <hr />
 <% end %>
