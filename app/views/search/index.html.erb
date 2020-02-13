@@ -1,3 +1,6 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
-<%= @term %>
+<h1>Twitter searcher</h1>
+<p>Tweets found: <%= @tweets[:body].count %></p>
+
+<% if ENV['FAKE_API'] %>
+  <%= render 'fake_list', tweets: @tweets %>
+<% end %>

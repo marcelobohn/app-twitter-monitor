@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets[:body].each do |tweet| %>
+      <tr>
+        <td><%= tweet['author'] %></td>
+        <td><%= tweet['message'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>    
