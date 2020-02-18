@@ -19,6 +19,14 @@ class TwitterApi
   end
 
   def search_tweet(term)
-    client.search("#{term} -rt", count: 10, tweet_mode: 'extended', result_type: "recent").take(10)
+    begin
+      client
+        .search("#{term} -rt", count: 10, tweet_mode: 'extended', result_type: 'recent')
+        .take(ENV['API_TWITTER_TAKE_TWEETS'].to_i || 10)
+    rescue Twitter::Error::BadRequest
+      return nil
+    rescue Twitter::Error::TooManyRequests
+      return nil
+    end
   end
 end
