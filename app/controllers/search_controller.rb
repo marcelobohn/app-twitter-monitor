@@ -5,8 +5,8 @@ class SearchController < ApplicationController
     if ENV['FAKE_API'] == 'true'
       @tweets = FakeTwitterApi.search(@term)
     else
-      @message = 'Search in oficial Twitter API not implemented'
-      # @tweets = TwitterApi.search(@term)
+      @tweets = TwitterApi.search(@term)
+      @message = 'Search in API was not possible' if @tweets.nil?
     end
   end
 end

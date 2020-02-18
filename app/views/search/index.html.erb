@@ -4,5 +4,6 @@
   <p>Tweets found: <%= @tweets[:body].count %></p>
   <%= render 'fake_list', tweets: @tweets %>
 <% else %>
-  <%= @message %>
+  <%= "Error: #{@message}" if @message%>
+  <%= render 'list', tweets: @tweets if @tweets  %>
 <% end %>

@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Message</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= "@#{tweet.user.screen_name} [#{tweet.user.name}]" %></td>
+        <td><%= tweet.attrs[:full_text] %></td>
+        <td><%= tweet.attrs[:created_at].to_datetime.strftime("%d/%m %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>    
