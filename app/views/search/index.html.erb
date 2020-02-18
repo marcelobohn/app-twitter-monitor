@@ -1,9 +1,4 @@
 <h1>Twitter searcher</h1>
 
-<% if ENV['FAKE_API'] == 'true' %>
-  <p>Tweets found: <%= @tweets[:body].count %></p>
-  <%= render 'fake_list', tweets: @tweets %>
-<% else %>
-  <%= "Error: #{@message}" if @message%>
-  <%= render 'list', tweets: @tweets if @tweets  %>
-<% end %>
+<%= "Error: #{@message}" if @message%>
+<%= render 'list', tweets: @tweets if @tweets  %>
